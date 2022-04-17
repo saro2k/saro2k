@@ -1,0 +1,43 @@
+package calculator;
+import calculator.Arithmetic;
+
+import java.util.Objects;
+import java.util.Scanner;
+ class converter{
+         public static void main(String[] args){
+             int choice,a,b,c;
+             String ans;
+             Scanner input=new Scanner(System.in);
+             Arithmetic obj=new Arithmetic();
+             do{
+                 System.out.println("\n MAIN MENU");
+                 System.out.println("\n ADD \n SUBTRACT \n MULTIPLY \n DIV");
+                 System.out.print("Enter the two values:");
+                 a= input.nextInt();
+                 b= input.nextInt();
+                 System.out.print("Enter the choice:");
+                 choice= input.nextInt();
+                 switch (choice) {
+                     case 1 -> {
+                         c = obj.add(a, b);
+                         System.out.println("Result:" + c);
+                     }
+                     case 2 -> {
+                         c = obj.sub(a, b);
+                         System.out.println("Result:" + c);
+                     }
+                     case 3 -> {
+                        c = obj.mul(a, b);
+                         System.out.println("Result:" + c);
+                     }
+                     case 4 -> {
+                         c = obj.div(a, b);
+                         System.out.println("Result:" + c);
+                     }
+                 }
+                 System.out.println("Do you want to go back to Main Menu? (y/n)");
+                ans= input.nextLine();
+             }  while(Objects.equals(ans, "y"));
+
+         }
+}

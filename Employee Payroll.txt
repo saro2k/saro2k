@@ -1,0 +1,160 @@
+import java.util.*;
+ class employee{
+    String  emp_name,address,mail_id;
+    int emp_id;
+    long num;
+    Scanner i=new Scanner(System.in);
+    Scanner s=new Scanner(System.in);
+    Scanner l=new Scanner(System.in);
+
+    void get(){
+        System.out.println("Enter the employee name:");
+        emp_name =s.nextLine();
+        System.out.println("Enter the address:");
+        address = s.nextLine();
+        System.out.println("Enter the employee mail id:");
+        mail_id=s.nextLine();
+        System.out.println("Enter the employee id:");
+        emp_id=i.nextInt();
+        System.out.println("Enter the mobile number:");
+        num=i.nextLong();
+
+    }
+    void put(){
+        System.out.println("Employee name:"+emp_name);
+        System.out.println("Employee address:"+address);
+        System.out.println("Employee mail id:"+mail_id);
+        System.out.println("Employee :"+emp_name);
+        System.out.println("Employee id:"+emp_id);
+        System.out.println("Employee mobile number:"+num);
+    }
+    static class Programer extends employee{
+       double basic_pay,da,hra,pf,scf,gp,np;
+       Scanner b=new Scanner(System.in);
+
+     void bp(){
+         System.out.println("Enter the basic pay programer:");
+         basic_pay=b.nextDouble();
+     }
+     void cal(){
+         da=((basic_pay/100)*97);
+         hra=((basic_pay/100)*12);
+         pf=((basic_pay/100)*0.1);
+         scf=((basic_pay/100)*0.2);
+         gp=(basic_pay+da+hra);
+         np=(gp-(pf+scf));
+     }
+     void put_salary(){
+         System.out.println(basic_pay);
+         System.out.println(hra);
+         System.out.println(pf);
+         System.out.println(scf);
+         System.out.println(gp);
+         System.out.println(np);
+     }
+    }
+    static class Assistant_professor extends employee{
+        double basic_pay,da,hra,pf,scf,gp,np;
+        Scanner b=new Scanner(System.in);
+
+        void bp(){
+            System.out.println("Enter the basic pay of assistant professor:");
+            basic_pay=b.nextDouble();
+        }
+        void cal(){
+            da=((basic_pay/100)*97);
+            hra=((basic_pay/100)*12);
+            pf=((basic_pay/100)*0.1);
+            scf=((basic_pay/100)*0.2);
+            gp=(basic_pay+da+hra);
+            np=(gp-(pf+scf));
+        }
+        void put_salary(){
+            System.out.println(basic_pay);
+            System.out.println(hra);
+            System.out.println(pf);
+            System.out.println(scf);
+            System.out.println(gp);
+            System.out.println(np);
+        }
+
+    }
+    static class Associative_professor extends employee{
+        double basic_pay,da,hra,pf,scf,gp,np;
+        Scanner b=new Scanner(System.in);
+
+        void bp(){
+            System.out.println("Enter the basic pay associative professor:");
+            basic_pay=b.nextDouble();
+        }
+        void cal(){
+            da=((basic_pay/100)*97);
+            hra=((basic_pay/100)*12);
+            pf=((basic_pay/100)*0.1);
+            scf=((basic_pay/100)*0.2);
+            gp=(basic_pay+da+hra);
+            np=(gp-(pf+scf));
+        }
+        void put_salary(){
+            System.out.println(basic_pay);
+            System.out.println(hra);
+            System.out.println(pf);
+            System.out.println(scf);
+            System.out.println(gp);
+            System.out.println(np);
+        }
+    }
+    static class Professor extends employee{
+        double basic_pay,da,hra,pf,scf,gp,np;
+        Scanner b=new Scanner(System.in);
+
+        void bp(){
+            System.out.println("Enter the basic pay professor:");
+            basic_pay=b.nextDouble();
+        }
+        void cal(){
+            da=((basic_pay/100)*97);
+            hra=((basic_pay/100)*12);
+            pf=((basic_pay/100)*0.1);
+            scf=((basic_pay/100)*0.2);
+            gp=(basic_pay+da+hra);
+            np=(gp-(pf+scf));
+        }
+        void put_salary(){
+            System.out.println(basic_pay);
+            System.out.println(hra);
+            System.out.println(pf);
+            System.out.println(scf);
+            System.out.println(gp);
+            System.out.println(np);
+        }
+    }
+    static class payroll{
+        public static void main(String[] args){
+            employee obj=new employee();
+            obj.get();
+            obj.put();
+            System.out.println("***********************************");
+            System.out.println("**************Payroll***************");
+            System.out.println("***********************************");
+            Programer p=new Programer();
+            p.bp();
+            p.cal();
+            p.put_salary();
+            Assistant_professor ap=new Assistant_professor();
+            ap.bp();
+            ap.cal();
+            ap.put_salary();
+            Associative_professor aps=new Associative_professor();
+            aps.bp();
+            aps.cal();
+            aps.put_salary();
+            Professor ps=new Professor();
+            ps.bp();
+            ps.cal();
+            ps.put_salary();
+
+        }
+    }
+
+}

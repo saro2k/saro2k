@@ -1,0 +1,86 @@
+import java.util.Scanner;
+class data
+{
+    int cno;
+    String cname,tofc;
+    double pmr,cmr,unit,amt;
+    void getdata()
+    {
+        Scanner s=new Scanner(System.in);
+        Scanner i=new Scanner(System.in);
+        Scanner d=new Scanner(System.in);
+
+
+        System.out.println("ENTER THE CONSUMER NAME:"+cname);
+        cname= s.nextLine();
+        System.out.println("ENTER THE CONSUMER NUMBER:"+cno);
+        cno= i.nextInt();
+        System.out.println("ENTER THE TYPE OF CONNECTION:"+tofc);
+        tofc= s.nextLine();
+        System.out.println("ENTER THE PREVIOUS MONTH READING:"+pmr);
+        pmr= d.nextDouble();
+        System.out.println("ENTER THE CURRENT MONTH READING:"+cmr);
+        cmr= d.nextDouble();
+    }
+
+    void calc()
+    {
+        unit=pmr-cmr;
+        if(tofc.equals("D"))
+        {
+            if(unit<=100)
+            {
+                amt=unit*1;
+            }
+            else if(unit>100 && unit<=200)
+            {
+                amt=unit*2.50;
+            }
+            else if(unit>201 && unit<=500)
+            {
+                amt=unit*4;
+            }
+            else if(unit>=501)
+            {
+                amt=unit*6;
+            }
+        }
+
+
+
+        else
+        {
+            if(unit<=100)
+            {
+                amt=unit*2;
+            }
+            else if(unit>100 && unit<=200)
+            {
+                amt=unit*4.50;
+            }
+            else if(unit>201 && unit<=500)
+            {
+                amt=unit*6;
+            }
+            else if(unit>=501)
+            {
+                amt=unit*7;
+            }
+        }
+    }
+    void display()
+    {
+        System.out.println("THE AMOUNT OF UNIT IS:"+unit);
+        System.out.println("THE AMOUNT IS:"+amt);
+    }
+}
+class result
+{
+    public static void main(String[] args)
+    {
+        data obj=new data();
+        obj.getdata();
+        obj.calc();
+        obj.display();
+    }
+}
